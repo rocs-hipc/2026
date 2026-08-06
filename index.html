@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ROCS HiPC Workshop 2025</title>
+  <style>
+    :root{
+      --bg-color:#ffffff;
+      --accent-color:#009688;
+      --text-color:#222222;
+      --light-accent:#e0f2f1;
+      --border-color:#b2dfdb;
+      --nav-height:90px; /* will be updated by JS */
+      --anchor-gap:10px; /* extra breathing room under nav */
+      --maxw:1200px;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+      background:var(--bg-color);color:var(--text-color);line-height:1.6;
+    }
+
+    header{
+      background:linear-gradient(135deg,var(--accent-color),#26a69a);
+      color:#fff;text-align:center;padding:3rem 1rem;
+      box-shadow:0 4px 10px rgba(0,0,0,.1);
+    }
+    header h1{font-size:2.5rem;margin-bottom:.5rem}
+    header p{font-size:1.1rem;opacity:.95}
+
+    /* Sticky nav */
+    nav{
+      position:sticky;top:0;z-index:1000;
+      display:flex;justify-content:center;flex-wrap:wrap;
+      background:var(--light-accent);
+      border-bottom:2px solid var(--border-color);
+      box-shadow:0 2px 6px rgba(0,0,0,.06);
+    }
+    nav a{
+      color:var(--accent-color);text-decoration:none;
+      padding:1rem 1.5rem;font-weight:600;
+      transition:background .25s,color .25s;border-radius:6px;
+    }
+    nav a:hover{background:var(--accent-color);color:#fff}
+
+    main{max-width:var(--maxw);margin:2rem auto;padding:0 2rem}
+
+    section{
+      background:#fff;padding:2rem;border-radius:1rem;
+      border:1px solid var(--border-color);
+      box-shadow:0 3px 8px rgba(0,0,0,.05);margin-bottom:2rem;
+      /* Key: ensure anchors land below sticky nav */
+      scroll-margin-top: calc(var(--nav-height) + var(--anchor-gap));
+    }
+
+    h2{
+      color:var(--accent-color);border-bottom:2px solid var(--accent-color);
+      padding-bottom:.5rem;margin-bottom:1rem;font-size:1.5rem;
+    }
+
+    ul{list-style:none}
+    li{
+      background:var(--light-accent);margin-bottom:.5rem;padding:.8rem 1rem;
+      border-left:4px solid var(--accent-color);border-radius:.5rem;
+    }
+
+    /* Table */
+    table{width:100%;border-collapse:collapse;margin-top:1rem;font-size:.95rem;table-layout:fixed;word-wrap:break-word}
+    th,td{padding:.9rem;border:1px solid var(--border-color);text-align:left}
+    th{background:var(--accent-color);color:#fff}
+    tbody tr:nth-child(even){background:var(--light-accent)}
+    thead tr:first-child th,
+    thead tr:nth-child(2) th,
+    thead tr:nth-child(3) th{
+      background:var(--light-accent);color:var(--accent-color);
+      font-weight:700;text-align:center
+    }
+    thead tr:nth-child(3) th{text-align:left}
+
+    .sponsors{display:flex;flex-wrap:wrap;justify-content:center;gap:2rem;margin-top:1.5rem}
+    .sponsors img{height:70px;filter:grayscale(20%);transition:filter .2s,transform .2s}
+    .sponsors img:hover{filter:grayscale(0%);transform:scale(1.05)}
+
+    footer{
+      text-align:center;padding:1.5rem;font-size:.9rem;color:#555;
+      border-top:2px solid var(--border-color);background:var(--light-accent);
+    }
+
+    /* Responsive tweaks */
+    @media (max-width:900px){
+      main{padding:0 1rem}
+      section{padding:1.5rem}
+      table{font-size:.9rem}
+    }
+    @media (max-width:700px){
+      nav{flex-direction:column;align-items:stretch}
+      nav a{border-top:1px solid var(--border-color);border-radius:0;text-align:center}
+      header h1{font-size:2rem}
+      h2{font-size:1.3rem}
+    }
+    @media (max-width:500px){
+      table,th,td{font-size:.82rem}
+      th,td{padding:.6rem}
+      nav a{font-size:.95rem}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>RecOnfigurable Computing and Systems Workshop 2025</h1>
+    <p>32nd IEEE International Conference on High Performance Computing, Data, & Analytics</p>
+	<p>Dec 17 2025, Hyderabad, India</p>
+  </header>
+
+  <nav id="site-nav">
+    <a href="#about">About</a>
+    <a href="#keynote">Keynote</a>
+    <a href="#tutorials">Tutorials</a>
+    <a href="#schedule">Schedule</a>
+    <a href="#people">People</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <main>
+    <section id="about">
+      <h2>About</h2>
+      <p>
+        Reconfigurable computing involves using hardware that can be dynamically reprogrammed to optimize performance for specific tasks. Field-Programmable Gate Arrays (FPGAs) are mainly used for reconfigurable computing, and are crucial for high-performance computing applications and accelerating machine learning (ML) applications. Unlike general-purpose CPUs and GPUs, FPGAs can be reconfigured to execute repetitive and computationally intense operations, offering better energy efficiency. The Reconfigurable Computing and Systems Workshop (ROCS) is aimed at attracting participants to discuss architecture of latest FPGAs and flows for executing deep learning workloads on such FPGA.
+      </p>
+    </section>
+
+    <section id="keynote">
+  <h2>Keynote</h2>
+  <ul>
+    <li><strong>Keynote Speaker:</strong> Avra Chatterjee</li>
+    <li><strong>Title:</strong> FPGAs for Deep Learning</li>
+  </ul>
+  <p>
+    Speaker Bio: Avra Chatterjee is the Senior Director of Software Development at AMD, where Avra leads the verification of all products within the Adaptive and Embedded Computing Group (AECG) Business Unit. With over 25 years of experience at AMD and formerly Xilinx, Avra has been instrumental in shaping the verification strategy and execution across generations of cutting-edge technologies. Avra holds a B.Tech in Electrical Engineering from the Indian Institute of Technology, Kharagpur, and a Master’s in Electrical Engineering from San Jose State University.
+  </p>
+</section>
+
+    <section id="tutorials">
+  <h2>Tutorials</h2>
+  <ul>
+    <li>
+      <strong>Versal Heterogeneous Compute System Architecture and Design Flow</strong> <br/>
+      <em>Presenter: Wikneswaran (Wicky) Pillai, AMD</em> <br/>
+	  <em>Bio: </em> Wikneswaran Pillai, with over 30 years of experience, is a consultant and trainer in Programmable Systems technologies and design techniques. He founded Sysellent Consulting LLP, which is a partner to AMD as an authorized training provider, and engages closely with leading academic institutions and industry. He is driven by the vision to generalize optimal system realization approaches that are independent of application domains and the compute platform architecture. He is a graduate from Engineering Council of London. <br/>
+		<br/>
+      <p>
+        This tutorial introduces AMD Versal as an adaptable and heterogeneous compute platform, while relating to the generic compute architectures. The benefits of the micro-architectures of Programmable Logic and AI Engine as high-throughput accelerators will be discussed. Finally, an overview of the compile, link and build flows will be presented.
+      </p>		
+    </li>
+    <li>
+      <strong>Executing CNNs on AMD DPUs</strong> <br/>
+      <em>Presenters: M A Muneeb and Rajesh Kedia, IIT Hyderabad</em> <br/>
+	  <em>Bio:</em> M A Muneeb is an M.Tech. (research) student in CSE at IIT Hyderabad. <br/>
+		  Rajesh Kedia is an assistant professor of CSE at IIT Hyderabad. <br/>
+		<br/>	
+      <p>
+        This tutorial will cover our flows and methodology for executing various CNNs on Deep learning Processor Unit (DPU) which is a CNN accelerator for FPGAs.
+		The tutorial will also expose the participants to Heterogeneous Accelerated Compute Cluster (HACC).
+      </p>
+    </li>
+    <li>
+      <strong>Enabling Modern Embedded AI Inference Solutions by FINN</strong> <br/>
+      <em>Presenter: Thomas Preusser, AMD</em> <br/>
+      <em> Bio:</em> Thomas is a principal engineer and the FINN project lead at AMD Research. Thomas earned a PhD from TU Dresden in 2011. He worked as a postdoctoral researcher both there and at the Systems Group of ETH Zürich. He also enjoyed an EU-funded Individual Maria-Skłodowska-Curie Fellowship at the Xilinx Research Labs in Dublin. His scientific background is computer arithmetic, application acceleration and systems design using FPGAs. His current focus lies on advancing FINN, a tool for the generation of custom embedded neural-network inference solutions.
+  	  <p>
+		   <br/>AI is rapidly permeating all aspects of our lives. It is adopted across a broad spectrum of applications, including a rising interest in classic embedded application domains. The challenges in communications, sensor intelligence and robotics are very concrete and rigid. Application-specific customization and tight system integration are key to enable these use cases. Fabric in FPGA devices and on SoC platforms delivers a solid, economical basis for this integrated flexibility and heterogeneity. This talk advertises Brevitas & FINN as a key tool chain for efficiently exploring and implementing AI inference solutions as building blocks for modern FPGA-based use case deployments. It sketches the FINN workflow, provides insights to the techniques employed by FINN and outlines journey of the development of FINN features and capabilities in the past and future.
+  	  </p>
+    </li>
+  </ul>
+</section>
+
+    <section id="schedule">
+      <h2>Schedule</h2>
+      <table>
+        <thead>
+          <tr>
+            <th colspan="5">2nd Workshop on Reconfiguration Computing and Systems (ROCS) – as part of HiPC</th>
+          </tr>
+          <tr>
+            <th colspan="5">Dec 17, 2025, Wednesday</th>
+          </tr>
+          <tr>
+            <th>Time</th>
+            <th>Duration (min)</th>
+            <th>Type of event/talk</th>
+            <th>Title</th>
+            <th>Speaker</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>08:30 – 08:40</td>
+            <td>10</td>
+            <td>Opening Remarks</td>
+            <td>Welcome Address</td>
+            <td>Organizing Committee</td>
+          </tr>
+          <tr>
+            <td>08:40 – 09:10</td>
+            <td>30</td>
+            <td>Keynote</td>
+            <td>FPGAs for Deep Learning</td>
+            <td>Avra Chatterjee</td>
+          </tr>
+          <tr>
+            <td>09:10 – 10:40</td>
+            <td>90</td>
+            <td>Tutorial-1</td>
+            <td>Versal Heterogeneous Compute System Architecture and Design Flow<br/></td>
+            <td>Wikneswaran (Wicky) Pillai, AMD</td>
+          </tr>
+          <tr>
+            <td>10:40 – 11:10</td>
+            <td>30</td>
+            <td>Break</td>
+            <td>Coffee Break</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>11:10 – 12:00</td>
+            <td>50</td>
+            <td>Tutorial-2</td>
+            <td>Executing CNNs on AMD DPUs<br/></td>
+            <td>M A Muneeb and Rajesh Kedia, IIT Hyderabad</td>
+          </tr>
+          <tr>
+            <td>12:05 – 12:55</td>
+            <td>50</td>
+            <td>Tutorial-3</td>
+            <td>Enabling Modern Embedded AI Inference Solutions by FINN<br/></td>
+            <td>Thomas Preusser, AMD</td>
+          </tr>			
+		  <tr>	
+            <td>12:55 – 13:00</td>
+            <td>5</td>
+            <td>Closing Remarks</td>
+            <td>Closing Remarks</td>
+            <td>Organizing Committee</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="people">
+      <h2>Organizers</h2>
+      <ul>
+        <li>
+          <strong>Madhura Purnaprajna</strong><br/>
+          <em>Affiliation:</em> AMD and PES University, Bengaluru <br/>
+          <em>Bio:</em> Madhura Purnaprajna is currently at AMD (Xilinx), where she looks at performance projections for next-gen AMD (Xilinx) ACAP devices. She received her Ph.D. in electrical engineering from the Heinz Nixdorf Institute, University of Paderborn, Germany. She was a Postdoctoral Fellow with an International Research Fellowship from the German Research Foundation (Deutsche Forschungsgemenischaft) and MHV Fellowship (SNSF), at the Processor Architecture Lab, EPFL, Switzerland, and the High-performance Computing Lab, Indian Institute of Science Bengaluru, Bengaluru. She is currently on a sabbatical from PES University.
+        </li>
+        <li>
+          <strong><a href="https://people.iith.ac.in/rkedia/" target="_blank">Rajesh Kedia</a></strong><br/>
+          <em>Affiliation:</em> IIT Hyderabad <br/>
+          <em>Bio:</em> Rajesh Kedia is an assistant professor of CSE at IIT Hyderabad, with expertise in reconfigurable computing, FPGA design, and embedded AI systems.
+        </li>
+        <li>
+          <strong>Naveen Purushotham</strong><br/>
+          <em>Affiliation:</em> AMD University Program<br/>
+          <em>Bio:</em> Naveen Purushotham is a Member of the Technical Staff at AMD University Program, part of AMD Research and Advanced Development, in San Jose, CA, where he works with academic institutions on teaching and research initiatives. His recent focus has been on Efficient and Applied Deep Learning for AMD AI products. Before joining AMD through its acquisition of Xilinx, he worked at Lattice Semiconductor as a Product Engineer in semiconductor product development. He holds an M.S. in Electrical and Computer Engineering from the University of New Mexico and a Master of Information and Data Science from the University of California, Berkeley.
+        </li>
+        <li>
+          <strong>Andrew Schmidt</strong><br/>
+          <em>Affiliation:</em> AMD University Program<br/>
+          <em>Bio:</em> Dr. Andrew Schmidt is a passionate advocate for advancing technology education and research, with a rich background in academia and industry. Andrew leverages his expertise to drive innovation and collaboration within the academic community. In this role, Andrew works closely with university faculty, researchers, and students to promote the adoption of AMD technologies in academic research and curriculum development through workshops, tutorials, and collaborative projects.  Andrew received his B.S. and M.S. in Computer Engineering from the University of Kansas and his Ph.D. in Electrical Engineering from the University of North Carolina at Charlotte.
+        </li>		  
+      </ul>
+    </section>
+
+	<section id="registration">
+      <h2>Contact</h2>
+      <p>
+        Registration can be done on HiPC registration page at 
+        <a href="https://hipc.org/attendee-registration/" target="_blank" style="color: var(--accent-color); text-decoration: underline;">https://hipc.org/attendee-registration/</a>
+      </p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>
+        For inquiries, please email:
+        <a href="mailto:rocs.hipc@gmail.com" style="color: var(--accent-color); text-decoration: underline;">rocs.hipc@gmail.com</a>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 ROCS HiPC Workshop. All rights reserved.
+  </footer>
+
+  <script>
+    // --- Dynamic offset handling so anchors never hide under the sticky nav ---
+    const nav = document.getElementById('site-nav');
+    const sections = document.querySelectorAll('main section');
+    const links = document.querySelectorAll('nav a');
+
+    function setNavHeightVar() {
+      const h = nav.offsetHeight || 0;
+      document.documentElement.style.setProperty('--nav-height', h + 'px');
+    }
+
+    function smoothScrollToHash(hash) {
+      if (!hash) return;
+      const el = document.querySelector(hash);
+      if (!el) return;
+      // Compute target position with offset
+      const navH = nav.offsetHeight || 0;
+      const gap = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--anchor-gap')) || 0;
+      const top = el.getBoundingClientRect().top + window.pageYOffset - navH - gap;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
+
+
+    // Set CSS var on load & resize
+    window.addEventListener('load', () => {
+      setNavHeightVar();
+      // If the page loaded with a hash, correct it
+      if (location.hash) setTimeout(() => smoothScrollToHash(location.hash), 0);
+    });
+    window.addEventListener('resize', () => {
+      setNavHeightVar();
+    });
+
+    // Intercept nav link clicks for offset-aware scrolling
+    links.forEach(a => {
+      a.addEventListener('click', (e) => {
+        const href = a.getAttribute('href');
+        if (href && href.startsWith('#')) {
+          e.preventDefault();
+          history.pushState(null, '', href);
+          smoothScrollToHash(href);
+        }
+      });
+    });
+
+    // Handle manual hash changes (e.g., back/forward)
+    window.addEventListener('hashchange', () => {
+      smoothScrollToHash(location.hash);
+    });
+
+  </script>
+</body>
+</html>
