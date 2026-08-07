@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ROCS HiPC Workshop 2025</title>
+  <title>ROCS HiPC Workshop 2026</title>
+  <meta name="description" content="Reconfigurable Computing and Systems Workshop (ROCS 2026), co-located with HiPC 2026, Bengaluru, India — December 16, 2026." />
   <style>
     :root{
       --bg-color:#ffffff;
@@ -41,7 +42,7 @@
     }
     nav a{
       color:var(--accent-color);text-decoration:none;
-      padding:1rem 1.5rem;font-weight:600;
+      padding:1rem 1.25rem;font-weight:600;
       transition:background .25s,color .25s;border-radius:6px;
     }
     nav a:hover{background:var(--accent-color);color:#fff}
@@ -60,12 +61,29 @@
       color:var(--accent-color);border-bottom:2px solid var(--accent-color);
       padding-bottom:.5rem;margin-bottom:1rem;font-size:1.5rem;
     }
+    h3{font-size:1.1rem;margin:1.5rem 0 .6rem;color:var(--text-color)}
+    p + p{margin-top:.8rem}
+
+    a{color:var(--accent-color)}
 
     ul{list-style:none}
-    li{
+
+    /* Highlighted "card" list — used sparingly, for themes and tracks */
+    ul.cards li{
       background:var(--light-accent);margin-bottom:.5rem;padding:.8rem 1rem;
       border-left:4px solid var(--accent-color);border-radius:.5rem;
     }
+
+    /* Plain bulleted list — for longer enumerations */
+    ul.bullets{list-style:disc;padding-left:1.4rem;margin-top:.4rem}
+    ul.bullets li{margin-bottom:.45rem;padding-left:.2rem}
+    ul.bullets li::marker{color:var(--accent-color)}
+
+    /* People list — no boxes, just spaced entries */
+    ul.people li{
+      padding:.9rem 0;border-bottom:1px solid var(--border-color);
+    }
+    ul.people li:last-child{border-bottom:none;padding-bottom:0}
 
     /* Table */
     table{width:100%;border-collapse:collapse;margin-top:1rem;font-size:.95rem;table-layout:fixed;word-wrap:break-word}
@@ -73,12 +91,22 @@
     th{background:var(--accent-color);color:#fff}
     tbody tr:nth-child(even){background:var(--light-accent)}
     thead tr:first-child th,
-    thead tr:nth-child(2) th,
-    thead tr:nth-child(3) th{
+    thead tr:nth-child(2) th{
       background:var(--light-accent);color:var(--accent-color);
       font-weight:700;text-align:center
     }
-    thead tr:nth-child(3) th{text-align:left}
+
+    .tba{color:#00695c;font-weight:600}
+    .note{font-size:.92rem;color:#555;margin-top:1rem}
+
+    /* Placeholder block for sections not yet announced */
+    .tba-block{
+      background:var(--light-accent);border:1px dashed var(--border-color);
+      border-radius:.5rem;padding:1.5rem;text-align:center;
+      color:#00695c;font-weight:600;letter-spacing:.05em;margin-top:.5rem;
+    }
+    .tba-block span{display:block;font-weight:400;letter-spacing:normal;
+      color:#555;font-size:.92rem;margin-top:.4rem}
 
     .sponsors{display:flex;flex-wrap:wrap;justify-content:center;gap:2rem;margin-top:1.5rem}
     .sponsors img{height:70px;filter:grayscale(20%);transition:filter .2s,transform .2s}
@@ -110,16 +138,18 @@
 </head>
 <body>
   <header>
-    <h1>RecOnfigurable Computing and Systems Workshop 2025</h1>
-    <p>32nd IEEE International Conference on High Performance Computing, Data, & Analytics</p>
-	<p>Dec 17 2025, Hyderabad, India</p>
+    <h1>RecOnfigurable Computing and Systems Workshop 2026</h1>
+    <p>33rd IEEE International Conference on High Performance Computing, Data, &amp; Analytics</p>
+    <p>Dec 16 2026, Bengaluru, India</p>
   </header>
 
   <nav id="site-nav">
     <a href="#about">About</a>
-    <a href="#keynote">Keynote</a>
-    <a href="#tutorials">Tutorials</a>
-    <a href="#schedule">Schedule</a>
+    <a href="#cfp">Call for Papers</a>
+    <a href="#dates">Dates</a>
+    <a href="#submission">Submission</a>
+    <a href="#program">Program</a>
+    <a href="#speakers">Speakers</a>
     <a href="#people">People</a>
     <a href="#contact">Contact</a>
   </nav>
@@ -128,172 +158,191 @@
     <section id="about">
       <h2>About</h2>
       <p>
-        Reconfigurable computing involves using hardware that can be dynamically reprogrammed to optimize performance for specific tasks. Field-Programmable Gate Arrays (FPGAs) are mainly used for reconfigurable computing, and are crucial for high-performance computing applications and accelerating machine learning (ML) applications. Unlike general-purpose CPUs and GPUs, FPGAs can be reconfigured to execute repetitive and computationally intense operations, offering better energy efficiency. The Reconfigurable Computing and Systems Workshop (ROCS) is aimed at attracting participants to discuss architecture of latest FPGAs and flows for executing deep learning workloads on such FPGA.
+        Reconfigurable computing involves using hardware that can be dynamically reprogrammed to optimize
+        performance for specific tasks. Field-Programmable Gate Arrays (FPGAs) are mainly used for
+        reconfigurable computing, and are crucial for high-performance computing applications and for
+        accelerating machine learning (ML) workloads. Unlike general-purpose CPUs and GPUs, FPGAs can be
+        reconfigured to execute repetitive and computationally intense operations, offering better energy
+        efficiency.
+      </p>
+      <p>
+        The Reconfigurable Computing and Systems Workshop (ROCS 2026) is the <strong>third edition</strong>
+        of the ROCS series, held previously at HiPC 2024 and HiPC 2025, and returns to HiPC 2026 in
+        Bengaluru. Reconfigurable architectures offer compelling solutions to the computational patterns
+        arising in deep learning, genomics, computational physics, drug discovery, and beyond, owing to
+        their adaptability and customizability. Unlike GPUs, however, FPGAs have yet to become widely usable
+        general-purpose accelerators. ROCS 2026 asks whether FPGAs are now positioned to offer viable
+        alternatives where cost, power, and performance align, and whether recent advances in agentic AI can
+        make HLS and design tools more capable and accessible.
+      </p>
+      <p>
+        Building on a growing community, this year the workshop introduces a
+        <strong>peer-reviewed short-paper track</strong>, alongside a poster-abstract track, invited talks,
+        and industry sessions.
       </p>
     </section>
 
-    <section id="keynote">
-  <h2>Keynote</h2>
-  <ul>
-    <li><strong>Keynote Speaker:</strong> Avra Chatterjee</li>
-    <li><strong>Title:</strong> FPGAs for Deep Learning</li>
-  </ul>
-  <p>
-    Speaker Bio: Avra Chatterjee is the Senior Director of Software Development at AMD, where Avra leads the verification of all products within the Adaptive and Embedded Computing Group (AECG) Business Unit. With over 25 years of experience at AMD and formerly Xilinx, Avra has been instrumental in shaping the verification strategy and execution across generations of cutting-edge technologies. Avra holds a B.Tech in Electrical Engineering from the Indian Institute of Technology, Kharagpur, and a Master’s in Electrical Engineering from San Jose State University.
-  </p>
-</section>
+    <section id="cfp">
+      <h2>Call for Papers</h2>
 
-    <section id="tutorials">
-  <h2>Tutorials</h2>
-  <ul>
-    <li>
-      <strong>Versal Heterogeneous Compute System Architecture and Design Flow</strong> <br/>
-      <em>Presenter: Wikneswaran (Wicky) Pillai, AMD</em> <br/>
-	  <em>Bio: </em> Wikneswaran Pillai, with over 30 years of experience, is a consultant and trainer in Programmable Systems technologies and design techniques. He founded Sysellent Consulting LLP, which is a partner to AMD as an authorized training provider, and engages closely with leading academic institutions and industry. He is driven by the vision to generalize optimal system realization approaches that are independent of application domains and the compute platform architecture. He is a graduate from Engineering Council of London. <br/>
-		<br/>
-      <p>
-        This tutorial introduces AMD Versal as an adaptable and heterogeneous compute platform, while relating to the generic compute architectures. The benefits of the micro-architectures of Programmable Logic and AI Engine as high-throughput accelerators will be discussed. Finally, an overview of the compile, link and build flows will be presented.
-      </p>		
-    </li>
-    <li>
-      <strong>Executing CNNs on AMD DPUs</strong> <br/>
-      <em>Presenters: M A Muneeb and Rajesh Kedia, IIT Hyderabad</em> <br/>
-	  <em>Bio:</em> M A Muneeb is an M.Tech. (research) student in CSE at IIT Hyderabad. <br/>
-		  Rajesh Kedia is an assistant professor of CSE at IIT Hyderabad. <br/>
-		<br/>	
-      <p>
-        This tutorial will cover our flows and methodology for executing various CNNs on Deep learning Processor Unit (DPU) which is a CNN accelerator for FPGAs.
-		The tutorial will also expose the participants to Heterogeneous Accelerated Compute Cluster (HACC).
-      </p>
-    </li>
-    <li>
-      <strong>Enabling Modern Embedded AI Inference Solutions by FINN</strong> <br/>
-      <em>Presenter: Thomas Preusser, AMD</em> <br/>
-      <em> Bio:</em> Thomas is a principal engineer and the FINN project lead at AMD Research. Thomas earned a PhD from TU Dresden in 2011. He worked as a postdoctoral researcher both there and at the Systems Group of ETH Zürich. He also enjoyed an EU-funded Individual Maria-Skłodowska-Curie Fellowship at the Xilinx Research Labs in Dublin. His scientific background is computer arithmetic, application acceleration and systems design using FPGAs. His current focus lies on advancing FINN, a tool for the generation of custom embedded neural-network inference solutions.
-  	  <p>
-		   <br/>AI is rapidly permeating all aspects of our lives. It is adopted across a broad spectrum of applications, including a rising interest in classic embedded application domains. The challenges in communications, sensor intelligence and robotics are very concrete and rigid. Application-specific customization and tight system integration are key to enable these use cases. Fabric in FPGA devices and on SoC platforms delivers a solid, economical basis for this integrated flexibility and heterogeneity. This talk advertises Brevitas & FINN as a key tool chain for efficiently exploring and implementing AI inference solutions as building blocks for modern FPGA-based use case deployments. It sketches the FINN workflow, provides insights to the techniques employed by FINN and outlines journey of the development of FINN features and capabilities in the past and future.
-  	  </p>
-    </li>
-  </ul>
-</section>
+      <h3>Themes</h3>
+      <p>The 2026 edition sharpens its focus around three themes:</p>
+      <ul class="cards">
+        <li>Application-level acceleration using heterogeneous FPGAs</li>
+        <li>AI/ML on FPGAs</li>
+        <li>LLM/agent-driven tooling for rapid FPGA development</li>
+      </ul>
 
-    <section id="schedule">
-      <h2>Schedule</h2>
+      <h3>Topics of Interest</h3>
+      <p>We invite submissions on topics including, but not limited to:</p>
+      <ul class="bullets">
+        <li>FPGA and reconfigurable architectures; adaptive and heterogeneous compute (e.g., Versal-class devices)</li>
+        <li>High-Level Synthesis (HLS), EDA tooling, and design automation for FPGAs</li>
+        <li>Agentic AI and LLMs for hardware generation, optimization, verification, and design-space exploration</li>
+        <li>AI/ML acceleration on FPGAs: deep learning, CNNs, transformer and LLM inference</li>
+        <li>Domain acceleration on reconfigurable hardware: genomics, computational physics, drug discovery, graph analytics, and scientific computing</li>
+        <li>Runtime reconfiguration, adaptive systems, and reconfigurable systems software</li>
+        <li>Performance, power, and cost efficiency studies comparing FPGAs with GPUs and other accelerators</li>
+        <li>Programming models, frameworks, and toolchains that lower the barrier to FPGA development</li>
+        <li>Case studies, reproducibility, and lessons learned in deploying reconfigurable systems</li>
+      </ul>
+    </section>
+
+    <section id="dates">
+      <h2>Important Dates</h2>
       <table>
         <thead>
           <tr>
-            <th colspan="5">2nd Workshop on Reconfiguration Computing and Systems (ROCS) – as part of HiPC</th>
-          </tr>
-          <tr>
-            <th colspan="5">Dec 17, 2025, Wednesday</th>
-          </tr>
-          <tr>
-            <th>Time</th>
-            <th>Duration (min)</th>
-            <th>Type of event/talk</th>
-            <th>Title</th>
-            <th>Speaker</th>
+            <th>Milestone</th>
+            <th>Date</th>
           </tr>
         </thead>
         <tbody>
+          <!-- TODO: replace TBA with confirmed HiPC 2026 workshop dates -->
           <tr>
-            <td>08:30 – 08:40</td>
-            <td>10</td>
-            <td>Opening Remarks</td>
-            <td>Welcome Address</td>
-            <td>Organizing Committee</td>
+            <td>Short paper / poster abstract submission deadline</td>
+            <td class="tba">TBA</td>
           </tr>
           <tr>
-            <td>08:40 – 09:10</td>
-            <td>30</td>
-            <td>Keynote</td>
-            <td>FPGAs for Deep Learning</td>
-            <td>Avra Chatterjee</td>
+            <td>Author notification</td>
+            <td class="tba">TBA</td>
           </tr>
           <tr>
-            <td>09:10 – 10:40</td>
-            <td>90</td>
-            <td>Tutorial-1</td>
-            <td>Versal Heterogeneous Compute System Architecture and Design Flow<br/></td>
-            <td>Wikneswaran (Wicky) Pillai, AMD</td>
+            <td>Camera-ready / final version</td>
+            <td class="tba">TBA</td>
           </tr>
           <tr>
-            <td>10:40 – 11:10</td>
-            <td>30</td>
-            <td>Break</td>
-            <td>Coffee Break</td>
-            <td>—</td>
-          </tr>
-          <tr>
-            <td>11:10 – 12:00</td>
-            <td>50</td>
-            <td>Tutorial-2</td>
-            <td>Executing CNNs on AMD DPUs<br/></td>
-            <td>M A Muneeb and Rajesh Kedia, IIT Hyderabad</td>
-          </tr>
-          <tr>
-            <td>12:05 – 12:55</td>
-            <td>50</td>
-            <td>Tutorial-3</td>
-            <td>Enabling Modern Embedded AI Inference Solutions by FINN<br/></td>
-            <td>Thomas Preusser, AMD</td>
-          </tr>			
-		  <tr>	
-            <td>12:55 – 13:00</td>
-            <td>5</td>
-            <td>Closing Remarks</td>
-            <td>Closing Remarks</td>
-            <td>Organizing Committee</td>
+            <td><strong>Workshop</strong></td>
+            <td><strong>December 16, 2026</strong></td>
           </tr>
         </tbody>
       </table>
+      <p class="note">All dates other than the workshop date are tentative and will be confirmed on this page.</p>
+    </section>
+
+    <section id="submission">
+      <h2>Submission Guidelines</h2>
+      <p>ROCS 2026 solicits submissions in <strong>two tracks</strong>, both relevant to the workshop themes:</p>
+      <ul class="cards">
+        <li>
+          <strong>1. Short papers</strong> — original work, work in progress, or experience/position contributions.<br/>
+          <em>Length:</em> up to <strong>4 pages excluding references</strong> (figures included in the 4-page count;
+          references may spill onto additional pages).<br/>
+          <em>Format:</em> IEEE conference template, two-column, 10pt.
+        </li>
+        <li>
+          <strong>2. Poster abstracts</strong> — early-stage results, student work, and preliminary ideas.<br/>
+          <em>Length:</em> up to 2 pages including references.<br/>
+          <em>Format:</em> IEEE conference template, two-column, 10pt.
+        </li>
+      </ul>
+
+      <h3>Common Guidelines</h3>
+      <ul class="bullets">
+        <li><strong>Review:</strong> each submission is peer-reviewed by at least three program-committee members. Reviewing is single-blind. Selection is based on technical quality, relevance to the workshop theme, and potential to spark discussion.</li>
+        <li><strong>Presentation:</strong> accepted short papers will be presented as talks; accepted poster abstracts will be presented as lightning talks and posters.</li>
+        <li><strong>Publication:</strong> ROCS 2026 is a <strong>presentation-only workshop</strong> — accepted papers will be presented at the workshop but will <strong>not</strong> be formally published in proceedings. Authors therefore retain full freedom to submit extended versions of their work elsewhere.</li>
+        <!-- TODO: insert the Linklings submission link once HiPC opens the workshop track -->
+        <li><strong>Submission site:</strong> all submissions are made through <strong>Linklings</strong>, the HiPC submission system. <span class="tba">Link to be announced here.</span></li>
+      </ul>
+    </section>
+
+    <section id="program">
+      <h2>Program</h2>
+      <p>
+        ROCS 2026 is a half-day workshop combining invited talks, peer-reviewed short contributions,
+        and industry engagement, comprising an invited keynote, an invited talk by an India-based
+        author of a paper published at a premier venue, presentations of accepted short papers,
+        lightning talks and posters, and industry technical talks.
+      </p>
+      <!-- TODO: replace with the schedule table (see the 2025 page) once the program is finalized -->
+      <div class="tba-block">
+        TBA
+        <span>The detailed schedule will be announced here.</span>
+      </div>
+    </section>
+
+    <section id="speakers">
+      <h2>Keynote &amp; Invited Speakers</h2>
+      <!-- TODO: replace with confirmed speakers, titles, abstracts and bios (see 2025 page for the format) -->
+      <p>
+        Keynote and invited speakers are being confirmed and will be announced here. The program will
+        feature an invited keynote, an invited talk by an India-based author of a paper published at a
+        premier venue, and industry technical talks.
+      </p>
     </section>
 
     <section id="people">
       <h2>Organizers</h2>
-      <ul>
+      <ul class="people">
+        <li>
+          <strong>Suresh Purini</strong><br/>
+          <em>Affiliation:</em> Associate Professor, IIIT Hyderabad<br/>
+          <em>Email:</em> <a href="mailto:suresh.purini@iiit.ac.in">suresh.purini@iiit.ac.in</a>
+        </li>
+        <li>
+          <strong>Chandan Karfa</strong><br/>
+          <em>Affiliation:</em> Associate Professor, IIT Guwahati<br/>
+          <em>Email:</em> <a href="mailto:ckarfa@iitg.ac.in">ckarfa@iitg.ac.in</a>
+        </li>
         <li>
           <strong>Madhura Purnaprajna</strong><br/>
-          <em>Affiliation:</em> AMD and PES University, Bengaluru <br/>
-          <em>Bio:</em> Madhura Purnaprajna is currently at AMD (Xilinx), where she looks at performance projections for next-gen AMD (Xilinx) ACAP devices. She received her Ph.D. in electrical engineering from the Heinz Nixdorf Institute, University of Paderborn, Germany. She was a Postdoctoral Fellow with an International Research Fellowship from the German Research Foundation (Deutsche Forschungsgemenischaft) and MHV Fellowship (SNSF), at the Processor Architecture Lab, EPFL, Switzerland, and the High-performance Computing Lab, Indian Institute of Science Bengaluru, Bengaluru. She is currently on a sabbatical from PES University.
+          <em>Affiliation:</em> AMD, Bengaluru<br/>
+          <em>Email:</em> <a href="mailto:madhura.purnaprajna@amd.com">madhura.purnaprajna@amd.com</a>
         </li>
         <li>
-          <strong><a href="https://people.iith.ac.in/rkedia/" target="_blank">Rajesh Kedia</a></strong><br/>
-          <em>Affiliation:</em> IIT Hyderabad <br/>
-          <em>Bio:</em> Rajesh Kedia is an assistant professor of CSE at IIT Hyderabad, with expertise in reconfigurable computing, FPGA design, and embedded AI systems.
-        </li>
-        <li>
-          <strong>Naveen Purushotham</strong><br/>
+          <strong>Jayashree H V</strong><br/>
           <em>Affiliation:</em> AMD University Program<br/>
-          <em>Bio:</em> Naveen Purushotham is a Member of the Technical Staff at AMD University Program, part of AMD Research and Advanced Development, in San Jose, CA, where he works with academic institutions on teaching and research initiatives. His recent focus has been on Efficient and Applied Deep Learning for AMD AI products. Before joining AMD through its acquisition of Xilinx, he worked at Lattice Semiconductor as a Product Engineer in semiconductor product development. He holds an M.S. in Electrical and Computer Engineering from the University of New Mexico and a Master of Information and Data Science from the University of California, Berkeley.
+          <em>Email:</em> <a href="mailto:jayashree.HV@amd.com">jayashree.HV@amd.com</a>
         </li>
-        <li>
-          <strong>Andrew Schmidt</strong><br/>
-          <em>Affiliation:</em> AMD University Program<br/>
-          <em>Bio:</em> Dr. Andrew Schmidt is a passionate advocate for advancing technology education and research, with a rich background in academia and industry. Andrew leverages his expertise to drive innovation and collaboration within the academic community. In this role, Andrew works closely with university faculty, researchers, and students to promote the adoption of AMD technologies in academic research and curriculum development through workshops, tutorials, and collaborative projects.  Andrew received his B.S. and M.S. in Computer Engineering from the University of Kansas and his Ph.D. in Electrical Engineering from the University of North Carolina at Charlotte.
-        </li>		  
       </ul>
-    </section>
 
-	<section id="registration">
-      <h2>Contact</h2>
-      <p>
-        Registration can be done on HiPC registration page at 
-        <a href="https://hipc.org/attendee-registration/" target="_blank" style="color: var(--accent-color); text-decoration: underline;">https://hipc.org/attendee-registration/</a>
-      </p>
+      <h2 style="margin-top:2.5rem">Program Committee</h2>
+      <!-- TODO: list PC members once the committee is confirmed -->
+      <div class="tba-block">
+        TBA
+        <span>The program committee will be announced here.</span>
+      </div>
     </section>
 
     <section id="contact">
-      <h2>Contact</h2>
+      <h2>Registration &amp; Contact</h2>
+      <p>
+        Registration is handled through the HiPC registration page at
+        <a href="https://hipc.org/attendee-registration/" target="_blank" rel="noopener">https://hipc.org/attendee-registration/</a>
+      </p>
       <p>
         For inquiries, please email:
-        <a href="mailto:rocs.hipc@gmail.com" style="color: var(--accent-color); text-decoration: underline;">rocs.hipc@gmail.com</a>
+        <a href="mailto:rocs.hipc@gmail.com">rocs.hipc@gmail.com</a>
+      </p>
+      <p>
+        Previous editions: <a href="https://rocs-hipc.github.io/2025/" target="_blank" rel="noopener">ROCS 2025</a>
       </p>
     </section>
   </main>
 
   <footer>
-    &copy; 2025 ROCS HiPC Workshop. All rights reserved.
+    &copy; 2026 ROCS HiPC Workshop. All rights reserved.
   </footer>
 
   <script>
@@ -317,7 +366,6 @@
       const top = el.getBoundingClientRect().top + window.pageYOffset - navH - gap;
       window.scrollTo({ top, behavior: 'smooth' });
     }
-
 
     // Set CSS var on load & resize
     window.addEventListener('load', () => {
@@ -345,7 +393,6 @@
     window.addEventListener('hashchange', () => {
       smoothScrollToHash(location.hash);
     });
-
   </script>
 </body>
 </html>
