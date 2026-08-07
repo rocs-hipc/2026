@@ -79,11 +79,10 @@
     ul.bullets li{margin-bottom:.45rem;padding-left:.2rem}
     ul.bullets li::marker{color:var(--accent-color)}
 
-    /* People list — no boxes, just spaced entries */
-    ul.people li{
-      padding:.9rem 0;border-bottom:1px solid var(--border-color);
-    }
-    ul.people li:last-child{border-bottom:none;padding-bottom:0}
+    /* People list — one line per person, no boxes or rules */
+    ul.people{margin-top:.4rem}
+    ul.people li{padding:.3rem 0}
+    ul.people .affil{color:#555}
 
     /* Table */
     table{width:100%;border-collapse:collapse;margin-top:1rem;font-size:.95rem;table-layout:fixed;word-wrap:break-word}
@@ -296,26 +295,23 @@
       <h2>Organizers</h2>
       <ul class="people">
         <li>
-          <strong>Suresh Purini</strong><br/>
-          <em>Affiliation:</em> Associate Professor, IIIT Hyderabad<br/>
-          <em>Email:</em> <a href="mailto:suresh.purini@iiit.ac.in">suresh.purini@iiit.ac.in</a>
+          <a href="mailto:suresh.purini@iiit.ac.in"><strong>Suresh Purini</strong></a>
+          <span class="affil">— Associate Professor, IIIT Hyderabad</span>
         </li>
         <li>
-          <strong>Chandan Karfa</strong><br/>
-          <em>Affiliation:</em> Associate Professor, IIT Guwahati<br/>
-          <em>Email:</em> <a href="mailto:ckarfa@iitg.ac.in">ckarfa@iitg.ac.in</a>
+          <a href="mailto:ckarfa@iitg.ac.in"><strong>Chandan Karfa</strong></a>
+          <span class="affil">— Associate Professor, IIT Guwahati</span>
         </li>
         <li>
-          <strong>Madhura Purnaprajna</strong><br/>
-          <em>Affiliation:</em> AMD, Bengaluru<br/>
-          <em>Email:</em> <a href="mailto:madhura.purnaprajna@amd.com">madhura.purnaprajna@amd.com</a>
+          <a href="mailto:madhura.purnaprajna@amd.com"><strong>Madhura Purnaprajna</strong></a>
+          <span class="affil">— AMD, Bengaluru</span>
         </li>
         <li>
-          <strong>Jayashree H V</strong><br/>
-          <em>Affiliation:</em> AMD University Program<br/>
-          <em>Email:</em> <a href="mailto:jayashree.HV@amd.com">jayashree.HV@amd.com</a>
+          <a href="mailto:jayashree.HV@amd.com"><strong>Jayashree H V</strong></a>
+          <span class="affil">— AMD University Program</span>
         </li>
       </ul>
+      <p class="note">Names link to email.</p>
 
       <h2 style="margin-top:2.5rem">Program Committee</h2>
       <!-- TODO: list PC members once the committee is confirmed -->
