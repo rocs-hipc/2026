@@ -107,6 +107,22 @@
     .tba-block span{display:block;font-weight:400;letter-spacing:normal;
       color:#555;font-size:.92rem;margin-top:.4rem}
 
+    /* Prominent call to action for the open submission site */
+    .cta{
+      display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;
+      gap:1.25rem;background:var(--light-accent);border:2px solid var(--accent-color);
+      border-radius:.5rem;padding:1.25rem 1.5rem;margin-bottom:1.75rem;
+    }
+    .cta-text{font-weight:700;color:#00695c;font-size:1.05rem}
+    .cta-text span{display:block;font-weight:400;color:#555;
+      font-size:.92rem;margin-top:.3rem}
+    .cta .btn{
+      background:var(--accent-color);color:#fff;text-decoration:none;
+      padding:.8rem 1.6rem;border-radius:.5rem;font-weight:700;
+      white-space:nowrap;transition:background .25s;
+    }
+    .cta .btn:hover{background:#00796b}
+
     .sponsors{display:flex;flex-wrap:wrap;justify-content:center;gap:2rem;margin-top:1.5rem}
     .sponsors img{height:70px;filter:grayscale(20%);transition:filter .2s,transform .2s}
     .sponsors img:hover{filter:grayscale(0%);transform:scale(1.05)}
@@ -248,6 +264,13 @@
 
     <section id="submission">
       <h2>Submission Guidelines</h2>
+      <div class="cta">
+        <div class="cta-text">
+          Submissions are open — deadline October 9, 2026 (AoE)
+          <span>Submit through Linklings and select the <strong>ROCS</strong> track.</span>
+        </div>
+        <a class="btn" href="https://ssl.linklings.net/conferences/HiPC/">Submit a paper</a>
+      </div>
       <p>ROCS 2026 solicits submissions in <strong>two tracks</strong>, both relevant to the workshop themes:</p>
       <ul class="cards">
         <li>
@@ -270,8 +293,7 @@
         <li><strong>In-person presentation required:</strong> every accepted contribution must be presented <strong>in person</strong> by one of its authors. Virtual presentations are not permitted.</li>
         <li><strong>Registration:</strong> each accepted paper must be covered by a <strong>full registration for the main HiPC 2026 conference</strong>.</li>
         <li><strong>Publication:</strong> accepted short papers will be included in the <strong>HiPC Workshops (HiPCW 2026) proceedings</strong>, a dedicated volume with its own ISBN; eligible papers are also submitted to the <strong>IEEE Xplore Digital Library</strong> after the conference. Authors who prefer not to publish may <strong>opt out</strong> at the camera-ready stage and present their work at the workshop only, retaining full freedom to submit extended versions elsewhere. Poster abstracts are presentation-only and do not appear in the proceedings.</li>
-        <!-- TODO: insert the Linklings submission link once HiPC opens the workshop track -->
-        <li><strong>Submission site:</strong> all submissions are made through <strong>Linklings</strong>, the HiPC submission system. <span class="tba">Link to be announced here.</span></li>
+        <li><strong>Submission site:</strong> all submissions are made through <strong>Linklings</strong>, the HiPC submission system, at <a href="https://ssl.linklings.net/conferences/HiPC/">ssl.linklings.net/conferences/HiPC</a>. Please select the <strong>ROCS</strong> track when submitting.</li>
       </ul>
     </section>
 
@@ -344,6 +366,10 @@
         <li>
           <strong>Shashwat Khandelwal</strong>
           <span class="affil">— Arm, Cambridge</span>
+        </li>
+        <li>
+          <strong>Konstantina Koliogeorgi</strong>
+          <span class="affil">— ETH Zurich</span>
         </li>
         <li>
           <strong>Stefan Nikolić</strong>
