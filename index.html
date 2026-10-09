@@ -79,6 +79,51 @@
     ul.bullets li{margin-bottom:.45rem;padding-left:.2rem}
     ul.bullets li::marker{color:var(--accent-color)}
 
+    /* Deadline-extension banner — sits directly under the nav, above all sections.
+       Amber rather than teal so it reads as a notice and does not merge with the header. */
+    .alert{
+      max-width:var(--maxw);margin:2rem auto -.75rem;padding:0 2rem;
+    }
+    .alert-inner{
+      display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem 1.5rem;
+      background:#fff8e1;border:2px solid #f0a500;border-left-width:8px;
+      border-radius:.5rem;padding:1.1rem 1.5rem;
+    }
+    .alert-text{font-weight:700;color:#7a4f00;font-size:1.15rem}
+    .alert-text .was{
+      font-weight:400;color:#8a7a5c;font-size:.95rem;margin-left:.5rem;
+    }
+    .alert-text span.sub{
+      display:block;font-weight:400;color:#6b5d44;font-size:.92rem;margin-top:.3rem;
+    }
+    .alert .btn{
+      background:#f0a500;color:#3d2800;text-decoration:none;
+      padding:.7rem 1.4rem;border-radius:.5rem;font-weight:700;
+      white-space:nowrap;transition:background .25s;
+    }
+    .alert .btn:hover{background:#d99400}
+    @media (max-width:900px){ .alert{padding:0 1rem} }
+
+    /* Speaker cards — photo alongside name, role and talk title */
+    ul.speakers{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;margin-top:.5rem}
+    ul.speakers li{
+      display:flex;align-items:center;gap:1.1rem;
+      background:var(--light-accent);border-left:4px solid var(--accent-color);
+      border-radius:.5rem;padding:1.1rem 1.25rem;
+    }
+    ul.speakers img{
+      width:96px;height:96px;flex-shrink:0;
+      border-radius:50%;object-fit:cover;
+      border:3px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.12);
+    }
+    ul.speakers .role{
+      display:block;font-size:.78rem;font-weight:700;letter-spacing:.06em;
+      text-transform:uppercase;color:var(--accent-color);margin-bottom:.15rem;
+    }
+    ul.speakers .name{display:block;font-size:1.1rem;font-weight:700}
+    ul.speakers .affil{display:block;color:#555;font-size:.92rem;margin-top:.1rem}
+    ul.speakers .talk{display:block;color:#555;font-size:.92rem;margin-top:.45rem}
+
     /* People list — one line per person, no boxes or rules */
     ul.people{margin-top:.4rem}
     ul.people li{padding:.3rem 0}
@@ -137,6 +182,7 @@
       main{padding:0 1rem}
       section{padding:1.5rem}
       table{font-size:.9rem}
+      ul.speakers{grid-template-columns:1fr}
     }
     @media (max-width:700px){
       nav{flex-direction:column;align-items:stretch}
@@ -160,14 +206,28 @@
 
   <nav id="site-nav">
     <a href="#about">About</a>
+    <a href="#speakers">Speakers</a>
     <a href="#cfp">Call for Papers</a>
     <a href="#dates">Dates</a>
     <a href="#submission">Submission</a>
     <a href="#program">Program</a>
-    <a href="#speakers">Speakers</a>
     <a href="#people">People</a>
     <a href="#contact">Contact</a>
   </nav>
+
+  <div class="alert" role="status">
+    <div class="alert-inner">
+      <div class="alert-text">
+        Deadline extended — submissions close October 16, 2026 (AoE)
+        <span class="was">previously October 9</span>
+        <span class="sub">Short papers and poster abstracts. Submit through Linklings and
+          select the <strong>ROCS</strong> track.</span>
+      </div>
+      <a class="btn" href="https://ssl.linklings.net/conferences/HiPC/"
+         target="_blank" rel="noopener"
+         aria-label="Submit a paper on Linklings (opens in a new tab)">Submit a paper <span aria-hidden="true">&#8599;</span></a>
+    </div>
+  </div>
 
   <main>
     <section id="about">
@@ -194,6 +254,51 @@
         Building on a growing community, this year the workshop introduces a
         <strong>peer-reviewed short-paper track</strong>, alongside a poster-abstract track, invited talks,
         and industry sessions.
+      </p>
+    </section>
+
+    <section id="speakers">
+      <h2>Keynote Speakers</h2>
+      <ul class="speakers">
+        <li>
+          <img src="images/anupam-chattopadhyay.webp"
+               alt="Anupam Chattopadhyay" width="96" height="96" loading="lazy" />
+          <div>
+            <span class="role">Academic Keynote</span>
+            <span class="name">Anupam Chattopadhyay</span>
+            <span class="affil">Associate Professor, College of Computing &amp; Data Science,
+              Nanyang Technological University, Singapore</span>
+            <span class="talk">Talk title to be announced</span>
+          </div>
+        </li>
+        <!-- Full bio, held back until both speakers' bios can be published together:
+             Anupam Chattopadhyay is currently an Associate Professor (with tenure) in College of
+             Computing & Data Science, Nanyang Technological University (NTU). He received his B.E.
+             degree from Jadavpur University, India, MSc. from ALaRI, Switzerland and PhD from RWTH
+             Aachen in 2000, 2002 and 2008, respectively. His research in the broad domains of
+             Electronic Design Automation, Cyber Security, Internet-of-Things (IoT) and
+             Application-Specific Instruction-Set Processors (ASIPs) has been published in 200+
+             IEEE/ACM conferences and journals and has led to multiple spinoffs and technology
+             transfers. Anupam has served in the TPCs of major EDA/VLSI conferences and edited a
+             Springer Major Reference Work on Computer Architectures. Anupam's research has garnered
+             several best paper awards, most recently in VLSI-SoC 2024 for Quantum adders, and in
+             CHES 2025 for side-channel attack on PQC standard Kyber. He was awarded fellowship of
+             Japanese Society for Promotion of Science (JSPS), fellowship of Intercontinental
+             Academia and won NTU Innovation and Entrepreneurship award in 2025. -->
+        <li>
+          <img src="images/joe-williams.jpg"
+               alt="Joe Williams" width="96" height="96" loading="lazy" />
+          <div>
+            <span class="role">Industry Keynote</span>
+            <span class="name">Joe Williams</span>
+            <span class="affil">Founder and Director, Business — Vimanic Systems</span>
+            <span class="talk">Talk title to be announced</span>
+          </div>
+        </li>
+      </ul>
+      <p class="note">
+        Speaker bios and talk titles will be posted here as they are confirmed. The program also
+        features invited talks and industry technical talks.
       </p>
     </section>
 
@@ -238,8 +343,9 @@
             <td>September 1, 2026</td>
           </tr>
           <tr>
-            <td>Short paper / poster abstract submission deadline</td>
-            <td>October 9, 2026 <em>(AoE)</em></td>
+            <td>Short paper / poster abstract submission deadline <em>(extended)</em></td>
+            <td><strong>October 16, 2026</strong> <em>(AoE)</em><br />
+              <span style="color:#777;font-size:.9em"><s>October 9, 2026</s></span></td>
           </tr>
           <tr>
             <td>Author notification</td>
@@ -266,7 +372,7 @@
       <h2>Submission Guidelines</h2>
       <div class="cta">
         <div class="cta-text">
-          Submissions are open — deadline October 9, 2026 (AoE)
+          Deadline extended — October 16, 2026 (AoE)
           <span>Submit through Linklings and select the <strong>ROCS</strong> track.</span>
         </div>
         <a class="btn" href="https://ssl.linklings.net/conferences/HiPC/"
@@ -305,7 +411,8 @@
            venue) may be added here once speakers are confirmed. -->
       <p>
         ROCS 2026 is a half-day workshop combining invited talks, peer-reviewed short contributions,
-        and industry engagement, comprising an invited keynote, presentations of accepted short
+        and industry engagement, comprising two keynotes — one academic and one industry —
+        presentations of accepted short
         papers, lightning talks and posters, and industry technical talks.
       </p>
       <!-- TODO: replace with the schedule table (see the 2025 page) once the program is finalized -->
@@ -313,15 +420,6 @@
         TBA
         <span>The detailed schedule will be announced here.</span>
       </div>
-    </section>
-
-    <section id="speakers">
-      <h2>Keynote &amp; Invited Speakers</h2>
-      <!-- TODO: replace with confirmed speakers, titles, abstracts and bios (see 2025 page for the format) -->
-      <p>
-        Keynote and invited speakers are being confirmed and will be announced here. The program will
-        feature an invited keynote, invited talks, and industry technical talks.
-      </p>
     </section>
 
     <section id="people">
