@@ -131,6 +131,9 @@
     ol.papers .title{display:block;font-weight:600}
     ol.papers .authors{display:block;color:#555;font-size:.95rem}
 
+    ul.speakers.single{grid-template-columns:1fr;max-width:calc(50% - .625rem)}
+    @media (max-width:900px){ ul.speakers.single{max-width:none} }
+
     /* People list — one line per person, no boxes or rules */
     ul.people{margin-top:.4rem}
     ul.people li{padding:.3rem 0}
@@ -318,6 +321,63 @@
         Joe Williams&rsquo;s talk title and abstract, and speaker bios, will be posted here as they are
         confirmed. The program also features invited talks and industry technical talks.
       </p>
+
+      <h2 style="margin-top:2.5rem">Invited Talk</h2>
+      <ul class="speakers single">
+        <li>
+          <img src="images/viktor-prasanna.png"
+               alt="Viktor K. Prasanna" width="96" height="96" loading="lazy" />
+          <div>
+            <span class="role">Invited Talk</span>
+            <span class="name">Viktor K. Prasanna</span>
+            <span class="affil">Charles Lee Powell Chair in Engineering and Professor of Computer Science,
+              University of Southern California</span>
+            <span class="talk"><em>Towards Real-time AI at the Edge</em></span>
+          </div>
+        </li>
+      </ul>
+
+      <h3>Towards Real-time AI at the Edge</h3>
+      <p><strong>Viktor K. Prasanna</strong> &mdash; Invited Talk</p>
+      <p>
+        Edge AI applications including Agentic AI systems require real-time performance. In addition, in
+        many applications, energy efficiency becomes a critical metric. To meet these requirements,
+        recently many edge platforms have been proposed including GPUs, FPGAs, NPUs and heterogeneous
+        architectures such as AI PCs. These devices are being used along with multi-core and novel memory
+        technologies to realize advanced platforms to accelerate edge inference and support diverse
+        applications requiring low latency. We will review emerging technologies for edge inference and
+        advances in reconfigurable computing over the past three decades leading up to current innovations
+        in FPGA accelerators for AI. We will illustrate parallel architectures and algorithms for
+        commercial, defense and space applications. Using our algorithm-architecture co-design methodology
+        to realize high performance accelerators for these applications, we demonstrate the role of
+        modeling and algorithmic optimizations to develop highly efficient Intellectual Property (IP) cores
+        for FPGAs and realize end to end application acceleration. We illustrate our methodology by
+        developing high performance designs for graph machine learning, long context LLM inference,
+        Mixture of Agents inference and SAR ATR. We conclude by identifying opportunities and challenges
+        in exploiting emerging heterogeneous architectures composed of multi-core processors, FPGAs,
+        integrated GPUs, NPUs and accelerators.
+      </p>
+
+<!-- Full bio, held back for now (publish together with the keynote bios):
+      <h3>Speaker Bio</h3>
+      <p>
+        Viktor K. Prasanna (<a href="https://sites.usc.edu/prasanna/" target="_blank" rel="noopener">sites.usc.edu/prasanna</a>)
+        is Charles Lee Powell Chair in Engineering in the Ming Hsieh Department of Electrical and Computer
+        Engineering and Professor of Computer Science at the University of Southern California. He is the
+        director of the Center for Energy Informatics at USC and leads the FPGA
+        (<a href="https://fpga.usc.edu/" target="_blank" rel="noopener">fpga.usc.edu</a>) and Data Science
+        Labs (<a href="https://dslab.usc.edu/" target="_blank" rel="noopener">dslab.usc.edu</a>). His research
+        interests include parallel and distributed computing, accelerator design, reconfigurable
+        architectures and algorithms and high performance computing. He serves as the Editor-in-Chief of
+        the Journal of Parallel and Distributed Computing. Prasanna was the founding Chair of the IEEE
+        Computer Society Technical Committee on Parallel Processing. He is the Steering Chair of the IEEE
+        International Parallel and Distributed Processing Symposium. He is a Fellow of the IEEE, the ACM
+        and the American Association for Advancement of Science (AAAS). He is a recipient of 2009
+        Outstanding Engineering Alumnus Award from the Pennsylvania State University, Distinguished Alumnus
+        award from UVCE and a 2019 Distinguished Alumnus Award from the Indian Institute of Science. He
+        received the 2015 W. Wallace McDowell award from the IEEE Computer Society for his contributions to
+        reconfigurable computing. He is an elected member of Academia Europaea.
+      </p> -->
     </section>
 
     <section id="accepted">
