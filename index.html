@@ -124,6 +124,13 @@
     ul.speakers .affil{display:block;color:#555;font-size:.92rem;margin-top:.1rem}
     ul.speakers .talk{display:block;color:#555;font-size:.92rem;margin-top:.45rem}
 
+    /* Accepted papers — numbered, title over authors */
+    ol.papers{padding-left:1.6rem;margin-top:.4rem}
+    ol.papers li{margin-bottom:.8rem;padding-left:.3rem}
+    ol.papers li::marker{color:var(--accent-color);font-weight:700}
+    ol.papers .title{display:block;font-weight:600}
+    ol.papers .authors{display:block;color:#555;font-size:.95rem}
+
     /* People list — one line per person, no boxes or rules */
     ul.people{margin-top:.4rem}
     ul.people li{padding:.3rem 0}
@@ -207,6 +214,7 @@
   <nav id="site-nav">
     <a href="#about">About</a>
     <a href="#speakers">Speakers</a>
+    <a href="#accepted">Accepted Papers</a>
     <a href="#cfp">Call for Papers</a>
     <a href="#dates">Dates</a>
     <a href="#submission">Submission</a>
@@ -218,14 +226,11 @@
   <div class="alert" role="status">
     <div class="alert-inner">
       <div class="alert-text">
-        Deadline extended — submissions close October 16, 2026 (AoE)
-        <span class="was">previously October 9</span>
-        <span class="sub">Short papers and poster abstracts. Submit through Linklings and
-          select the <strong>ROCS</strong> track.</span>
+        Accepted papers and posters announced
+        <span class="sub">Six short papers and four posters will be presented at ROCS 2026 on
+          December 16 in Bengaluru.</span>
       </div>
-      <a class="btn" href="https://ssl.linklings.net/conferences/HiPC/"
-         target="_blank" rel="noopener"
-         aria-label="Submit a paper on Linklings (opens in a new tab)">Submit a paper <span aria-hidden="true">&#8599;</span></a>
+      <a class="btn" href="#accepted">See the list <span aria-hidden="true">&#8595;</span></a>
     </div>
   </div>
 
@@ -268,7 +273,7 @@
             <span class="name">Anupam Chattopadhyay</span>
             <span class="affil">Associate Professor, College of Computing &amp; Data Science,
               Nanyang Technological University, Singapore</span>
-            <span class="talk">Talk title to be announced</span>
+            <span class="talk"><em>AI is everywhere: Where is EDA?</em></span>
           </div>
         </li>
         <!-- Full bio, held back until both speakers' bios can be published together:
@@ -296,9 +301,78 @@
           </div>
         </li>
       </ul>
+      <h3>AI is everywhere: Where is EDA?</h3>
+      <p><strong>Anupam Chattopadhyay</strong> &mdash; Academic Keynote</p>
+      <p>
+        Rapid adoption of AI agents at various phases of Electronic Design Automation (EDA) is catching
+        traditional designers and EDA developers off-guard, similar to many other domains. This calls
+        for a consolidated effort towards understanding the true benefits and pitfalls. In this talk, we
+        will discuss three major phases of agentic AI in EDA. First, the performance/efficiency benefit
+        and cost of AI adoption for individual tasks will be studied. Second, for multi-agent flows,
+        various agentic architectures will be discussed. Third, security and privacy challenges of
+        agentic AI will be highlighted. The talk will conclude with a clear roadmap for research and
+        development along these three topics as well as presenting an ambitious, long-term objective of
+        fully autonomous design.
+      </p>
       <p class="note">
-        Speaker bios and talk titles will be posted here as they are confirmed. The program also
-        features invited talks and industry technical talks.
+        Joe Williams&rsquo;s talk title and abstract, and speaker bios, will be posted here as they are
+        confirmed. The program also features invited talks and industry technical talks.
+      </p>
+    </section>
+
+    <section id="accepted">
+      <h2>Accepted Papers and Posters</h2>
+
+      <h3>Short Papers</h3>
+      <ol class="papers">
+        <li>
+          <span class="title">From Specification to Vitis HLS: A Bounded LLM Agent for Image-Processing Pipelines</span>
+          <span class="authors">Adithya Kishor, Varun Shastry, Aditya R Shankar, Sajiv Singh, Suresh Purini</span>
+        </li>
+        <li>
+          <span class="title">RISC-V Based CNN Accelerator SoC on FPGA Using Chisel</span>
+          <span class="authors">Adithya R Prabhu, Nalesh S, Kala S</span>
+        </li>
+        <li>
+          <span class="title">An HLS-Based FPGA Accelerator for LLaMA-2 Inference on Zynq UltraScale+ MPSoC: A Measured Case Study</span>
+          <span class="authors">Mohammad Salik Dev, Anand Joshi, Binod Kumar</span>
+        </li>
+        <li>
+          <span class="title">Accelerating Quantized Transformer-Based DNA Basecalling Inference on Edge FPGAs</span>
+          <span class="authors">Mohammed Sahel, Madhura Purnaprajna</span>
+        </li>
+        <li>
+          <span class="title">NOVA: An Output-Stationary INT8 CNN Accelerator for Edge Inference</span>
+          <span class="authors">Vedant Pahariya, Sujith Kumar Nadendla, Rithik Reddy Pallla, Priyesh Shukla</span>
+        </li>
+        <li>
+          <span class="title">FINN-MP: Resource-Efficient and High-Throughput Mixed-Precision Dataflow CNN Accelerators</span>
+          <span class="authors">M A Muneeb, Ayush Kumar Sinha, Rajesh Kedia</span>
+        </li>
+      </ol>
+
+      <h3>Posters</h3>
+      <ol class="papers">
+        <li>
+          <span class="title">Multiply-Free LLM Inference Across Heterogeneous Platforms: FPGA, CPU, GPU, and NPU</span>
+          <span class="authors">Dhushyanth S</span>
+        </li>
+        <li>
+          <span class="title">Clock-Scaled On-Chip Correlation Power Analysis and First-Order Boolean Masking Evaluation of AES-128 on Zynq-7000 SoC</span>
+          <span class="authors">Sphatika S Jain, Charan Gowda K, Nitin D, Manasvi Bhat K, Pavithra H</span>
+        </li>
+        <li>
+          <span class="title">A Configurable CORDIC Accelerator for Granularity Aware Hardware Offloading</span>
+          <span class="authors">Tamoghna Sonowal, Gaurav Kaushal, Suman Sau, Biswabandhu Jana</span>
+        </li>
+        <li>
+          <span class="title">Hardware&ndash;Software Co-Design of a Biomedical LLM Accelerator on FPGA</span>
+          <span class="authors">Saravanan P, Umesh Anandh S</span>
+        </li>
+      </ol>
+      <p class="note">
+        Short papers will be presented as talks; posters as lightning talks and posters. The
+        presentation order will appear in the program.
       </p>
     </section>
 
@@ -372,12 +446,10 @@
       <h2>Submission Guidelines</h2>
       <div class="cta">
         <div class="cta-text">
-          Deadline extended — October 16, 2026 (AoE)
-          <span>Submit through Linklings and select the <strong>ROCS</strong> track.</span>
+          Submissions are closed
+          <span>Thank you to all authors. Notifications were sent on November 6, 2026.</span>
         </div>
-        <a class="btn" href="https://ssl.linklings.net/conferences/HiPC/"
-           target="_blank" rel="noopener"
-           aria-label="Submit a paper on Linklings (opens in a new tab)">Submit a paper <span aria-hidden="true">&#8599;</span></a>
+        <a class="btn" href="#accepted">Accepted papers <span aria-hidden="true">&#8595;</span></a>
       </div>
       <p>ROCS 2026 solicits submissions in <strong>two tracks</strong>, both relevant to the workshop themes:</p>
       <ul class="cards">
